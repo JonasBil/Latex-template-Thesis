@@ -60,7 +60,7 @@ latex-exercise3/
 
 ```bash
 # Clone this repository
-git clone https://github.com/JonasBil/vub-latex-template.git my-project
+git clone https://github.com/JonasBil/Latex-template-VUB.git my-project
 cd my-project
 
 # Open in VS Code
@@ -82,7 +82,7 @@ The compiled PDF will be in `build/main.pdf`.
 
 ## Recommended VS Code Extensions
 
-The following extensions are recommended for a smooth LaTeX workflow in VS Code:
+The following extensions are recommended for a smooth LaTeX workflow in VS Code (you can create a new VS-code profile with these plugins to keep everything clean and organized):
 
 - **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)** — The core extension for LaTeX in VS Code. Provides one-click PDF compilation (`Ctrl+Alt+B`), real-time error highlighting, SyncTeX support (click in the PDF to jump to the source and vice versa), auto-completion for `\cite{}`, `\ref{}`, and LaTeX commands, and a built-in PDF viewer. This template's `.vscode/settings.json` is pre-configured for it.
 - **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)** — Grammar and spell checking powered by LanguageTool. Works directly in `.tex` files and understands LaTeX syntax, so it won't flag commands as spelling errors. Supports multiple languages.

@@ -1,0 +1,38 @@
+{
+    // LaTeX Workshop: Use latexmk with correct output directory and style path
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-interaction=nonstopmode",
+                "-outdir=build",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXINPUTS": "./styles:$TEXINPUTS"
+            }
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk build",
+            "tools": ["latexmk"]
+        }
+    ],
+    "latex-workshop.latex.outDir": "build",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.clean.enabled": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.log",
+        "*.synctex.gz",
+        "*.toc"
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
+}

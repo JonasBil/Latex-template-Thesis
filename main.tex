@@ -1,0 +1,58 @@
+%! Author = Jonas Bil
+%! Date = DD/MM/YYYY
+
+% Preamble
+\documentclass[a4paper]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{styles/vub}  % VUB theme
+\usepackage{array}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{apacite} % APA style citations
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{includefoot,bottom=15mm}
+
+%Pagestyle---------------------------------------------------------------
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\fancyhead{} % Clears default header and footer
+\fancyfoot{}
+\setlength{\footskip}{18pt}
+\fancyfoot[R]{\textcolor{gray}{\thepage}}
+\fancyfoot[L]{\textcolor{gray}{Jonas Bil}}  % Change to your name
+
+%Document information----------------------------------------------------
+\title{Report Title}
+\faculty{Sciences and Bio-Engineering Sciences} % VUB Faculty name
+\author{Jonas Bil}
+
+% Document
+\begin{document}
+    \maketitle
+    
+    \tableofcontents
+    \newpage
+
+    % Include section files
+    \input{sections/01-introduction}
+    \input{sections/02-methods}
+    \input{sections/03-results}
+    \input{sections/04-discussion}
+    \input{sections/05-conclusion}
+
+    \newpage
+    \bibliographystyle{apacite}
+    \bibliography{bib/main}
+
+    % Appendix (after references)
+    \newpage
+    \appendix
+    \input{sections/06-appendix}
+    
+\end{document}

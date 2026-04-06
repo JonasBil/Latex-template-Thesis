@@ -1,58 +1,143 @@
-%! Author = Jonas Bil
+%! Author = Your Name
 %! Date = DD/MM/YYYY
 
-% Preamble
-\documentclass[a4paper]{article}
+% =============================================================================
+% KU Leuven Master Thesis Template
+% Faculty of Science – Geography & Tourism
+% =============================================================================
+\documentclass[a4paper, 12pt]{article}
 
-% Packages
+% --- KU Leuven thesis style ---
+\usepackage{styles/kuleuven-thesis}
+
+% --- Additional packages ---
 \usepackage{amsmath}
-\usepackage{styles/vub}  % VUB theme
 \usepackage{array}
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{fancyhdr}
-\usepackage{apacite} % APA style citations
-\usepackage{xcolor}
-\usepackage{geometry}
-\geometry{includefoot,bottom=15mm}
+\usepackage{apacite}        % APA style citations
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
 
-%Pagestyle---------------------------------------------------------------
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\setlength{\parindent}{0pt}
-\fancyhead{} % Clears default header and footer
-\fancyfoot{}
-\setlength{\footskip}{18pt}
-\fancyfoot[R]{\textcolor{gray}{\thepage}}
-\fancyfoot[L]{\textcolor{gray}{Jonas Bil}}  % Change to your name
+% --- Hyperref settings ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=kulblue,
+    citecolor=kulblue,
+    urlcolor=kulblue,
+    pdfauthor={Your Name},
+    pdftitle={Your Thesis Title},
+}
 
-%Document information----------------------------------------------------
-\title{Report Title}
-\faculty{Sciences and Bio-Engineering Sciences} % VUB Faculty name
-\author{Jonas Bil}
+% =============================================================================
+% Thesis metadata — fill in your details
+% =============================================================================
+\thesistitle{Your Thesis Title}
+% \thesissubtitle{Optional Subtitle}
+\thesisauthor{Your Name}
+\thesispromotor[Affiliation optional]{Prof.\ dr.\ Promotor Name}
+\thesiscopromotor[Affiliation optional]{Prof.\ dr.\ Co-Promotor Name}
+% \thesismentor[Affiliation]{Mentor Name}
+% \thesisreader{Reader Name}
+% \thesisassessor{dr.\ Assessor Name}
+\academicyear{2025--2026}
+\thesisfacultykul{Faculty of Science}
+\thesisfacultyvub{Faculty of Science and Bio-Engineering Sciences}
+\thesisdepartment{Department of Earth and Environmental Sciences}
+\thesisdegree{Master of Science in Geography}
+% \thesiscoverimage{Images/cover} % optional cover image (max 10cm height)
 
+% =============================================================================
 % Document
+% =============================================================================
 \begin{document}
-    \maketitle
-    
-    \tableofcontents
-    \newpage
 
-    % Include section files
-    \input{sections/01-introduction}
-    \input{sections/02-methods}
-    \input{sections/03-results}
-    \input{sections/04-discussion}
-    \input{sections/05-conclusion}
+% --- Title page ---
+\maketitle
 
-    \newpage
-    \bibliographystyle{apacite}
-    \bibliography{bib/main}
+% --- Copyright page (choose EN or NL) ---
+\makecopyrightEN
+%\makecopyrightNL
 
-    % Appendix (after references)
-    \newpage
-    \appendix
-    \input{sections/06-appendix}
-    
+% --- Disclaimer page (Open Access policy, choose EN or NL) ---
+\makedisclaimerEN
+%\makedisclaimerNL
+
+% =============================================================================
+% Front matter (Roman numerals)
+% =============================================================================
+\frontmatter
+
+% --- Preface / Foreword ---
+\begin{preface}
+    % Summarise the general goal of the work and thank contributors.
+    \input{sections/00-preface}
+\end{preface}
+
+% --- Contribution Statement ---
+\begin{contributionstatement}
+    % Describe your own contribution and support received from others.
+    \input{sections/00-contribution}
+\end{contributionstatement}
+
+% --- Abstract (English) ---
+\begin{abstractEN}
+    % Max 2 pages. Key objectives and conclusions.
+    \input{sections/00-abstract-en}
+\end{abstractEN}
+
+% --- Samenvatting (Dutch) ---
+\begin{abstractNL}
+    % Max 2 pagina's. Belangrijkste doelstellingen en conclusies.
+    \input{sections/00-abstract-nl}
+\end{abstractNL}
+
+% --- List of Abbreviations ---
+\begin{abbreviations}
+    \input{sections/00-abbreviations}
+\end{abbreviations}
+
+% --- List of Symbols (optional) ---
+% \begin{listofsymbols}
+%     \input{sections/00-symbols}
+% \end{listofsymbols}
+
+% --- Table of Contents ---
+\newpage
+\tableofcontents
+\newpage
+
+% --- List of Figures & Tables (optional) ---
+\listoffigures
+\listoftables
+\newpage
+
+% =============================================================================
+% Main matter (Arabic numerals)
+% =============================================================================
+\mainmatter
+
+% --- Chapters ---
+\input{sections/01-introduction}
+\input{sections/02-methods}
+\input{sections/03-results}
+\input{sections/04-discussion}
+\input{sections/05-conclusion}
+
+% =============================================================================
+% References
+% =============================================================================
+\newpage
+\bibliographystyle{apacite}
+\bibliography{bib/main}
+
+% =============================================================================
+% Appendices
+% =============================================================================
+\newpage
+\appendix
+\input{sections/06-appendix}
+
 \end{document}

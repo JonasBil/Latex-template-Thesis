@@ -68,6 +68,11 @@
 \newcommand\@thesisreader{}
 \newcommand\@thesiscoverimage{}
 
+\newboolean{copyrightkul}
+\newboolean{copyrightvub}
+\setboolean{copyrightkul}{true}
+\setboolean{copyrightvub}{true}
+
 \newcommand{\thesistitle}[1]{\renewcommand\@thesistitle{#1}}
 \newcommand{\thesissubtitle}[1]{\renewcommand\@thesissubtitle{#1}}
 \newcommand{\thesisauthor}[1]{\renewcommand\@thesisauthor{#1}}
@@ -84,6 +89,19 @@
 \newcommand{\thesisdepartment}[1]{\renewcommand\@thesisdepartment{#1}}
 \newcommand{\thesisdegree}[1]{\renewcommand\@thesisdegree{#1}}
 \newcommand{\thesiscoverimage}[1]{\renewcommand\@thesiscoverimage{#1}}
+\newcommand{\copyrightinstitution}[1]{%
+    \ifthenelse{\equal{#1}{kul}}{%
+        \setboolean{copyrightkul}{true}
+        \setboolean{copyrightvub}{false}
+    }{%
+    \ifthenelse{\equal{#1}{vub}}{%
+        \setboolean{copyrightkul}{false}
+        \setboolean{copyrightvub}{true}
+    }{%
+        \setboolean{copyrightkul}{true}
+        \setboolean{copyrightvub}{true}
+    }}%
+}
 
 % =============================================================================
 % Title page (matching official VUB/KU Leuven Geography front page template)
@@ -205,27 +223,33 @@
     \thispagestyle{empty}
     \null\vfill
     {\scriptsize\setlength{\parskip}{3pt}
-    \noindent\textcopyright\ Copyright by KU Leuven\par
-    \noindent Without written permission of the promoters and the authors it is forbidden
-    to reproduce or adapt in any form or by any means any part of this publication.
-    Requests for obtaining the right to reproduce or utilize parts of this publication
-    should be addressed to KU Leuven, Faculteit Wetenschappen,
-    Geel Huis, Kasteelpark Arenberg 11
-    bus 2100, 3001 Leuven (Heverlee),
-    Telephone +32 16 32 14 01.\par
-    \noindent A written permission of the promoter is also required to use the methods,
-    products, schematics and programs described in this work for industrial or
-    commercial use, and for submitting this publication in scientific contests.\par
-    \vspace{6pt}
-    \noindent\textcopyright\ Copyright by Vrije Universiteit Brussel\par
-    \noindent Without written permission of the promoters and the authors it is forbidden
-    to reproduce or adapt in any form or by any means any part of this publication.
-    Requests for obtaining the right to reproduce or utilize parts of this publication
-    should be addressed to Vrije Universiteit Brussel, Faculteit Wetenschappen en Bio-ingenieurswetenschappen,
-    Pleinlaan 2, 1050 Brussel, Telephone +32 (0)2 629 33.57.\par
-    \noindent A written permission of the promoter is also required to use the methods,
-    products, schematics and programs described in this work for industrial or
-    commercial use, and for submitting this publication in scientific contests.
+    \ifthenelse{\boolean{copyrightkul}}{%
+        \noindent\textcopyright\ Copyright by KU Leuven\par
+        \noindent Without written permission of the promoters and the authors it is forbidden
+        to reproduce or adapt in any form or by any means any part of this publication.
+        Requests for obtaining the right to reproduce or utilize parts of this publication
+        should be addressed to KU Leuven, Faculteit Wetenschappen,
+        Geel Huis, Kasteelpark Arenberg 11
+        bus 2100, 3001 Leuven (Heverlee),
+        Telephone +32 16 32 14 01.\par
+        \noindent A written permission of the promoter is also required to use the methods,
+        products, schematics and programs described in this work for industrial or
+        commercial use, and for submitting this publication in scientific contests.\par
+    }{}
+    \ifthenelse{\boolean{copyrightkul} \and \boolean{copyrightvub}}{%
+        \vspace{6pt}
+    }{}
+    \ifthenelse{\boolean{copyrightvub}}{%
+        \noindent\textcopyright\ Copyright by Vrije Universiteit Brussel\par
+        \noindent Without written permission of the promoters and the authors it is forbidden
+        to reproduce or adapt in any form or by any means any part of this publication.
+        Requests for obtaining the right to reproduce or utilize parts of this publication
+        should be addressed to Vrije Universiteit Brussel, Faculteit Wetenschappen en Bio-ingenieurswetenschappen,
+        Pleinlaan 2, 1050 Brussel, Telephone +32 (0)2 629 33.57.\par
+        \noindent A written permission of the promoter is also required to use the methods,
+        products, schematics and programs described in this work for industrial or
+        commercial use, and for submitting this publication in scientific contests.
+    }{}
     }%
     \newpage
 }
@@ -234,31 +258,37 @@
     \thispagestyle{empty}
     \null\vfill
     {\scriptsize\setlength{\parskip}{3pt}
-    \noindent\textcopyright\ Copyright by KU Leuven\par
-    \noindent Zonder voorafgaande schriftelijke toestemming van zowel de promotor(en) als
-    de auteur(s) is overnemen, kopi\"eren, gebruiken of realiseren van deze uitgave of
-    gedeelten ervan verboden. Voor aanvragen tot of informatie i.v.m.\ het overnemen
-    en/of gebruik en/of realisatie van gedeelten uit deze publicatie, wendt u tot de
-    KU~Leuven, Faculteit Wetenschappen, Geel Huis, Kasteelpark Arenberg 11
-    bus 2100, 3001 Leuven (Heverlee), Telefoon +32 16 32 14 01.\par
-    \noindent Voorafgaande schriftelijke toestemming van de promotor(en) is eveneens vereist
-    voor het aanwenden van de in dit afstudeerwerk beschreven (originele) methoden,
-    producten, schakelingen en programma's voor industrieel of commercieel nut en voor
-    de inzending van deze publicatie ter deelname aan wetenschappelijke prijzen of
-    wedstrijden.\par
-    \vspace{6pt}
-    \noindent\textcopyright\ Copyright by Vrije Universiteit Brussel\par
-    \noindent Zonder voorafgaande schriftelijke toestemming van zowel de promotor(en) als
-    de auteur(s) is overnemen, kopi\"eren, gebruiken of realiseren van deze uitgave of
-    gedeelten ervan verboden. Voor aanvragen tot of informatie i.v.m.\ het overnemen
-    en/of gebruik en/of realisatie van gedeelten uit deze publicatie, wendt u tot de
-    Vrije Universiteit Brussel, Faculteit Wetenschappen en Bio-ingenieurswetenschappen,
-    Pleinlaan 2, 1050 Brussel, Telefoon +32 (0)2 629 33.57.\par
-    \noindent Voorafgaande schriftelijke toestemming van de promotor(en) is eveneens vereist
-    voor het aanwenden van de in dit afstudeerwerk beschreven (originele) methoden,
-    producten, schakelingen en programma's voor industrieel of commercieel nut en voor
-    de inzending van deze publicatie ter deelname aan wetenschappelijke prijzen of
-    wedstrijden.
+    \ifthenelse{\boolean{copyrightkul}}{%
+        \noindent\textcopyright\ Copyright by KU Leuven\par
+        \noindent Zonder voorafgaande schriftelijke toestemming van zowel de promotor(en) als
+        de auteur(s) is overnemen, kopi\"eren, gebruiken of realiseren van deze uitgave of
+        gedeelten ervan verboden. Voor aanvragen tot of informatie i.v.m.\ het overnemen
+        en/of gebruik en/of realisatie van gedeelten uit deze publicatie, wendt u tot de
+        KU~Leuven, Faculteit Wetenschappen, Geel Huis, Kasteelpark Arenberg 11
+        bus 2100, 3001 Leuven (Heverlee), Telefoon +32 16 32 14 01.\par
+        \noindent Voorafgaande schriftelijke toestemming van de promotor(en) is eveneens vereist
+        voor het aanwenden van de in dit afstudeerwerk beschreven (originele) methoden,
+        producten, schakelingen en programma's voor industrieel of commercieel nut en voor
+        de inzending van deze publicatie ter deelname aan wetenschappelijke prijzen of
+        wedstrijden.\par
+    }{}
+    \ifthenelse{\boolean{copyrightkul} \and \boolean{copyrightvub}}{%
+        \vspace{6pt}
+    }{}
+    \ifthenelse{\boolean{copyrightvub}}{%
+        \noindent\textcopyright\ Copyright by Vrije Universiteit Brussel\par
+        \noindent Zonder voorafgaande schriftelijke toestemming van zowel de promotor(en) als
+        de auteur(s) is overnemen, kopi\"eren, gebruiken of realiseren van deze uitgave of
+        gedeelten ervan verboden. Voor aanvragen tot of informatie i.v.m.\ het overnemen
+        en/of gebruik en/of realisatie van gedeelten uit deze publicatie, wendt u tot de
+        Vrije Universiteit Brussel, Faculteit Wetenschappen en Bio-ingenieurswetenschappen,
+        Pleinlaan 2, 1050 Brussel, Telefoon +32 (0)2 629 33.57.\par
+        \noindent Voorafgaande schriftelijke toestemming van de promotor(en) is eveneens vereist
+        voor het aanwenden van de in dit afstudeerwerk beschreven (originele) methoden,
+        producten, schakelingen en programma's voor industrieel of commercieel nut en voor
+        de inzending van deze publicatie ter deelname aan wetenschappelijke prijzen of
+        wedstrijden.
+    }{}
     }%
     \newpage
 }

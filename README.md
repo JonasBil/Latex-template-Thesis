@@ -110,6 +110,7 @@ Edit the preamble, title, and author information directly in `main.tex`:
 \thesiscopromotor[Affiliation optional]{Prof.\ dr.\ Co-Promotor Name}
 % \thesismentor[Affiliation optional]{Mentor Name}
 \academicyear{2025--2026}
+\copyrightinstitution{both} % Set to 'kul', 'vub', or 'both'
 % \thesiscoverimage{images/cover} % optional cover image (max 10cm height)
 ```
 
@@ -124,11 +125,19 @@ Title Page Commands (use in `main.tex`):
 - `\thesisfacultykul{Name}`: Name of your KUL faculty.
 - `\thesisfacultyvub{Name}`: Name of your VUB faculty.
 - `\thesisdegree{Degree}`: The exact degree name you are pursuing.
+- `\copyrightinstitution{institution}`: Choose between `kul`, `vub`, or `both` for the copyright information.
 - `\thesiscoverimage{path/to/image}`: you can add an optional cover image (max height 10cm, adjust path as needed).
 
 If you **add a cover image**, it will be placed on the title page according to the KU Leuven guidelines. Make sure to use a high-resolution image and adjust the path correctly (for example, if you put your image in the `images/` folder, the path would be `images/cover`). The template will automatically scale it to fit within the allowed dimensions. Sometimes things shift around when you add a cover image, so you might have to adjust the vertical spacing of the title page elements. You can do this by changing the `\vspace{}` values in the style file (`styles/kuleuven-thesis.sty`) under the `\maketitle` definition.
 
-The official KU Leuven logos (and VUB equivalent) are automatically included and can be found/changed in the `styles/Style_assets` folder. 
+The official KU Leuven logos (and VUB equivalent) are automatically included and can be found/changed in the `styles/Style_assets` folder.
+
+**Copyright Information and Disclaimer**
+The `\copyrightinstitution{}` command allows you to specify the institution(s) that hold the copyright for your thesis. You can choose between: both, kul, or vub. This will automatically format the copyright notice on the first page.
+
+If you are on the KU leuven program, this is mandatory, for the VUB I didn't find any specific guidelines about this, so I would recommend checking with your supervisor or the VUB guidelines to see if you need to include this and if so, which institution you should list. You can change the text of the copyright notice in the style file (`styles/kuleuven-thesis.sty`) if needed, but it should be correct for the KU Leuven program. 
+
+The same is for the disclaimer, if you are in the KU Leuven program, you have to include the disclaimer, for the VUB I didn't find any specific guidelines, you can again change this disclaimer in the style file (`styles/kuleuven-thesis.sty`). 
 
 ### 2. Edit Section Files
 

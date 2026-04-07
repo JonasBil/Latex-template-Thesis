@@ -212,6 +212,11 @@
         {\fontsize{11}{14}\selectfont Academic year \@academicyear\par}
     \end{flushright}
 
+    % --- Blue Footer Bar ---
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=south,inner sep=0pt] at ([yshift=16mm]current page.south) {\includegraphics{styles/Style_assets/blue_footer.pdf}};
+    \end{tikzpicture}%
+
     \restoregeometry
 \end{titlepage}
 }

@@ -5,7 +5,7 @@
 % KU Leuven Master Thesis Template
 % Faculty of Science – Geography & Tourism
 % =============================================================================
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 11pt]{article}
 
 % --- KU Leuven thesis style ---
 \usepackage{styles/kuleuven-thesis}
@@ -35,19 +35,17 @@
 % Thesis metadata — fill in your details
 % =============================================================================
 \thesistitle{Your Thesis Title}
-% \thesissubtitle{Optional Subtitle}
+\thesissubtitle{Optional Subtitle}
 \thesisauthor{Your Name}
 \thesispromotor[Affiliation optional]{Prof.\ dr.\ Promotor Name}
 \thesiscopromotor[Affiliation optional]{Prof.\ dr.\ Co-Promotor Name}
-% \thesismentor[Affiliation]{Mentor Name}
-% \thesisreader{Reader Name}
-% \thesisassessor{dr.\ Assessor Name}
-\academicyear{2025--2026}
+% \thesismentor[Affiliation optional]{Mentor Name}
+\academicyear{2025--2026} % adjust as needed 
 \thesisfacultykul{Faculty of Science}
 \thesisfacultyvub{Faculty of Science and Bio-Engineering Sciences}
 \thesisdepartment{Department of Earth and Environmental Sciences}
 \thesisdegree{Master of Science in Geography}
-% \thesiscoverimage{Images/cover} % optional cover image (max 10cm height)
+% \thesiscoverimage{images/cover} % optional cover image (max 10cm height)
 
 % =============================================================================
 % Document
@@ -66,7 +64,7 @@
 %\makedisclaimerNL
 
 % =============================================================================
-% Front matter (Roman numerals)
+% Front matter (These are the sections put before the content page and have Roman numerals as page numbers)
 % =============================================================================
 \frontmatter
 
@@ -88,14 +86,14 @@
     \input{sections/00-abstract-en}
 \end{abstractEN}
 
-% --- Samenvatting (Dutch) ---
-\begin{abstractNL}
-    % Max 2 pagina's. Belangrijkste doelstellingen en conclusies.
-    \input{sections/00-abstract-nl}
-\end{abstractNL}
+% --- Samenvatting (Dutch), if you're enrolled in the Dutch program you have to add a dutch version of the abstract ---
+%\begin{abstractNL}
+%    \input{sections/00-abstract-nl}
+%\end{abstractNL}
 
 % --- List of Abbreviations ---
 \begin{abbreviations}
+    % Define your abbreviations here, e.g.: GIS: Geographic Information System
     \input{sections/00-abbreviations}
 \end{abbreviations}
 
@@ -115,7 +113,7 @@
 \newpage
 
 % =============================================================================
-% Main matter (Arabic numerals)
+% Main matter (The have Arabic numerals as page numbers and contain the actual content of your thesis)
 % =============================================================================
 \mainmatter
 
@@ -127,14 +125,14 @@
 \input{sections/05-conclusion}
 
 % =============================================================================
-% References
+% References (at the end, before the appendices)
 % =============================================================================
 \newpage
 \bibliographystyle{apacite}
 \bibliography{bib/main}
 
 % =============================================================================
-% Appendices
+% Appendices (if needed, you can add as many as you want, just create new files in the sections/ folder and input them here)
 % =============================================================================
 \newpage
 \appendix

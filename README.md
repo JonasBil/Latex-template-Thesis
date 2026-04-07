@@ -332,6 +332,20 @@ The template exposes official ku leuven colors you can use in text:
 \textcolor{kulolivegrey}{Olive Grey}
 ```
 
+**Changing Citation/Link Colors**
+You can easily change the color of your citations and hyperlinks in the `main.tex` file. Locate the `\hypersetup` block in the preamble and change the `citecolor`, `linkcolor`, or `urlcolor` values. 
+
+For example, to make citations black instead of the default KU Leuven blue:
+```latex
+\hypersetup{
+    colorlinks=true,
+    linkcolor=kulblue,
+    citecolor=black,     % <--- Change this to any color (e.g., kulolivegrey, black, darkgray)
+    urlcolor=kulblue,
+    % ...
+}
+```
+
 ### Fonts
 
 The template enforces a Sans-Serif font structure (Helvetica-based), mirroring the standard KU Leuven brand typography (`\familydefault{\sfdefault}`). 

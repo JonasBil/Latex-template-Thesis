@@ -17,7 +17,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
-\usepackage{apacite}        % APA style citations
+\usepackage[style=apa, backend=biber]{biblatex}        % APA style citations
+\addbibresource{bib/main.bib}
 \usepackage{booktabs}
 \usepackage{longtable}
 
@@ -71,17 +72,17 @@
 
 % --- Preface / Foreword ---
 \begin{preface}
-    \input{sections/00-preface}
+	\input{sections/00-preface}
 \end{preface}
 
 % --- Contribution Statement ---
 \begin{contributionstatement}
-    \input{sections/00-contribution}
+	\input{sections/00-contribution}
 \end{contributionstatement}
 
 % --- Abstract (English) ---
 \begin{abstractEN}
-    \input{sections/00-abstract-en}
+	\input{sections/00-abstract-en}
 \end{abstractEN}
 
 % --- Samenvatting (Dutch), if you're enrolled in the Dutch program you have to add a dutch version of the abstract ---
@@ -91,7 +92,7 @@
 
 % --- List of Abbreviations ---
 \begin{abbreviations}
-    \input{sections/00-abbreviations}
+	\input{sections/00-abbreviations}
 \end{abbreviations}
 
 % --- List of Symbols (optional) ---
@@ -125,8 +126,8 @@
 % References (at the end, before the appendices)
 % =============================================================================
 \newpage
-\bibliographystyle{apacite}
-\bibliography{bib/main}
+%\nocite{*}
+\printbibliography
 
 % =============================================================================
 % Appendices (if needed, you can add as many as you want, just create new files in the sections/ folder and input them here)
